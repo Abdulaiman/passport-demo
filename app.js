@@ -113,6 +113,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/sign-up", (req, res) => res.render("sign-up-form"));
+
 app.post("/sign-up", async (req, res, next) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
